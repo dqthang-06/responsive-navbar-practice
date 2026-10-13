@@ -1,0 +1,84 @@
+/* Reset css và thiết lập box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8fafc;
+}
+
+/* Thanh điều hướng */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333333;
+    padding: 15px 20px;
+    color: #ffffff;
+    position: relative;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #38bdf8;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Responsive cho Mobile & Tablet nhỏ (dưới 768px) */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Mặc định ẩn trên mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333333;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Hiển thị menu khi JavaScript thêm class active */
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 12px 0;
+        margin: 0;
+        border-top: 1px solid #444444;
+    }
+
+    .menu-icon {
+        display: block; /* Hiện biểu tượng hamburger */
+    }
+}
